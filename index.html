@@ -148,31 +148,56 @@
               </h2>
           </td>
         </tr> -->
-        
-          
-  <div class="row">
-    <div class="col">
-      <img src="./static/images/green.png" 
-           alt="Gallery Image 1" 
-           width="100%" 
-           style="border-radius:10px; width:120%; max-width:500px;">
-    </div>
-    
-    <div class="col">
-      <img src="./static/images/yellow.png" 
-           alt="Gallery Image 2" 
-           width="100%" 
-           style="border-radius:10px; width:120%; max-width:500px;">
-    </div>
-    
-    <div class="col">
-      <img src="./static/images/red.png" 
-           alt="Gallery Image 3" 
-           width="100%" 
-           style="border-radius:10px; width:120%; max-width:500px;">
-    </div>
+        <style>
+  /* Row layout */
+  .row {
+    display: flex;
+    justify-content: space-around; /* equal space between images */
+    gap: 30px; /* spacing between columns */
+  }
+
+  /* Column layout */
+  .col {
+    flex: 1;
+    text-align: center;
+  }
+
+  /* Image styling */
+  .gallery-img {
+    width: 100%;          /* Fill the column */
+    max-width: 350px;     /* Control image size */
+    border-radius: 10px;  
+    transition: transform 0.3s ease; /* Smooth scaling effect */
+  }
+
+  /* Optional: Hover effect to scale slightly */
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive layout for small screens */
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
+<div class="row">
+  <div class="col">
+    <img src="./static/images/green.png" alt="Safe" class="gallery-img">
   </div>
-  <br>
+  
+  <div class="col">
+    <img src="./static/images/yellow.png" alt="Caution" class="gallery-img">
+  </div>
+  
+  <div class="col">
+    <img src="./static/images/red.png" alt="Critical" class="gallery-img">
+  </div>
+</div>
+<br>
 
           
         
