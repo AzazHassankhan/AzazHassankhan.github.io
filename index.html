@@ -149,39 +149,71 @@
           </td>
         </tr> -->
         <style>
-  /* Row layout */
+/* Row layout */
+.row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.col {
+  flex: 1;
+  text-align: center;
+}
+
+/* Gallery images */
+.gallery-img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.3s ease; /* smooth hover zoom */
+  cursor: pointer;
+}
+
+/* Hover effect (slight zoom) */
+.gallery-img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox overlay */
+#lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Zoomed image in lightbox */
+#lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  transition: transform 0.3s ease;
+}
+
+/* Close button */
+#closeBtn {
+  position: absolute;
+  top: 20px; right: 40px;
+  font-size: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive stacking for small screens */
+@media (max-width: 768px) {
   .row {
-    display: flex;
-    justify-content: space-around; /* equal space between images */
-    gap: 30px; /* spacing between columns */
+    flex-direction: column;
+    align-items: center;
   }
-
-  /* Column layout */
-  .col {
-    flex: 1;
-    text-align: center;
-  }
-
-  /* Image styling */
-  .gallery-img {
-    width: 100%;          /* Fill the column */
-    max-width: 350px;     /* Control image size */
-    border-radius: 10px;  
-    transition: transform 0.3s ease; /* Smooth scaling effect */
-  }
-
-  /* Optional: Hover effect to scale slightly */
-  .gallery-img:hover {
-    transform: scale(1.05);
-  }
-
-  /* Responsive layout for small screens */
-  @media (max-width: 768px) {
-    .row {
-      flex-direction: column;
-      align-items: center;
-    }
-  }
+}
 </style>
 
 <div class="row">
