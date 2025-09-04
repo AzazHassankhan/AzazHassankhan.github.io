@@ -148,27 +148,34 @@
               </h2>
           </td>
         </tr> -->
-      <style>
-         .row {
+<style>
+  /* Row layout */
+  .row {
     display: flex;
-    justify-content: space-between;
-    gap: 20px; /* space between columns */
+    justify-content: space-around; /* equal space between images */
+    gap: 30px; /* spacing between columns */
   }
 
+  /* Column layout */
   .col {
     flex: 1;
     text-align: center;
   }
 
+  /* Image styling */
   .gallery-img {
-    width: 100%;
-    max-width: 500px; /* controls image size */
-    border-radius: 10px;
-    display: block;
-    margin: 0 auto;
+    width: 100%;          /* Fill the column */
+    max-width: 350px;     /* Control image size */
+    border-radius: 10px;  
+    transition: transform 0.3s ease; /* Smooth scaling effect */
   }
 
-  /* Make layout stack nicely on smaller screens */
+  /* Optional: Hover effect to scale slightly */
+  .gallery-img:hover {
+    transform: scale(1.05);
+  }
+
+  /* Responsive layout for small screens */
   @media (max-width: 768px) {
     .row {
       flex-direction: column;
